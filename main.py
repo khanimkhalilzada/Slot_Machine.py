@@ -65,7 +65,7 @@ def print_slot_machine(columns):
     for row in range(len(columns[0])):
         for i, column in enumerate(columns):
             if i != len(columns) - 1:
-                print(column[row], end="|")   #end \n kimi seydi
+                print(column[row], end="|")   
             else:
                 print(column[row], end="")
         print()
@@ -74,7 +74,7 @@ def print_slot_machine(columns):
 def deposit():
     while True:
         amount = input("Please, enter the amount of deposit $")
-        if amount.isdigit():     #isdigit methodu negativeleri goturmur deye else e dusecek ve sehv mesaj
+        if amount.isdigit(): 
             amount = int(amount)
             if amount >= 0:
                 break
@@ -102,7 +102,7 @@ def number_of_lines():
 def get_bet():
     while True:
         amount = input("What would you like to bet on each line? $")
-        if amount.isdigit():     #isdigit methodu negativeleri goturmur deye else e dusecek ve sehv mesaj
+        if amount.isdigit():    
             amount = int(amount)
             if MIN_BET <= amount <= MAX_BET:
                 break
@@ -133,7 +133,7 @@ def spin(balance):
     print_slot_machine(slots)
     winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
     print(f"You won {winnings}.")
-    print("You won on lines:", *winning_lines)   #splat operator
+    print("You won on lines:", *winning_lines)   
     return winnings - total_bet
 
 
